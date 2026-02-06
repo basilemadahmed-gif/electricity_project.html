@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>ترشيد استهلاك الكهرباء</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#eef3f7;
+    text-align:center;
+}
+.box{
+    background:white;
+    width:360px;
+    margin:40px auto;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 0 12px #bbb;
+}
+input, button{
+    width:95%;
+    padding:10px;
+    margin:8px 0;
+    font-size:15px;
+}
+button{
+    background:#1e90ff;
+    color:white;
+    border:none;
+    cursor:pointer;
+    border-radius:6px;
+}
+.result{
+    margin-top:12px;
+    font-size:16px;
+    color:#222;
+}
+.tip{
+    margin-top:10px;
+    font-size:14px;
+    color:#006400;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>برنامج ترشيد استهلاك الكهرباء ⚡</h2>
+
+    <input type="number" id="power" placeholder="قدرة الجهاز (واط)">
+    <input type="number" id="hours" placeholder="عدد ساعات الاستخدام">
+    <input type="number" id="price" placeholder="سعر الكيلو واط/ساعة (مثال: 0.3)">
+
+    <button onclick="calc()">احسب</button>
+
+    <div class="result" id="result"></div>
+    <div class="tip" id="tip"></div>
+</div>
+
+<script>
+function calc(){
+    var power = document.getElementById("power").value;
+    var hours = document.getElementById("hours").value;
+    var price = document.getElementById("price").value;
+
+    if(power=="" || hours=="" || price==""){
+        document.getElementById("result").innerHTML = "دخل كل البيانات لو سمحت";
+        document.getElementById("tip").innerHTML = "";
+        return;
+    }
+
+    var wattHour = power * hours;
+    var kwh = wattHour / 1000;
+    var cost = kwh * price;
+
+    document.getElementById("result").innerHTML =
+        "الاستهلاك: " + kwh.toFixed(2) + " كيلو واط/ساعة<br>" +
+        "التكلفة التقريبية: " + cost.toFixed(2);
+
+    if(kwh > 2){
+        document.getElementById("tip").innerHTML =
+            "نصيحة 💡: حاول تقلل ساعات الاستخدام أو تستخدم جهاز موفّر للطاقة.";
+    } else {
+        document.getElementById("tip").innerHTML =
+            "ممتاز 🌱 استهلاكك قليل وتساهم في ترشيد الكهرباء.";
+    }
+}
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>ترشيد استهلاك الكهرباء</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#eef3f7;
+    text-align:center;
+}
+.box{
+    background:white;
+    width:360px;
+    margin:40px auto;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 0 12px #bbb;
+}
+input, button{
+    width:95%;
+    padding:10px;
+    margin:8px 0;
+    font-size:15px;
+}
+button{
+    background:#1e90ff;
+    color:white;
+    border:none;
+    cursor:pointer;
+    border-radius:6px;
+}
+.result{
+    margin-top:12px;
+    font-size:16px;
+    color:#222;
+}
+.tip{
+    margin-top:10px;
+    font-size:14px;
+    color:#006400;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>برنامج ترشيد استهلاك الكهرباء ⚡</h2>
+
+    <input type="number" id="power" placeholder="قدرة الجهاز (واط)">
+    <input type="number" id="hours" placeholder="عدد ساعات الاستخدام">
+    <input type="number" id="price" placeholder="سعر الكيلو واط/ساعة (مثال: 0.3)">
+
+    <button onclick="calc()">احسب</button>
+
+    <div class="result" id="result"></div>
+    <div class="tip" id="tip"></div>
+</div>
+
+<script>
+function calc(){
+    var power = document.getElementById("power").value;
+    var hours = document.getElementById("hours").value;
+    var price = document.getElementById("price").value;
+
+    if(power=="" || hours=="" || price==""){
+        document.getElementById("result").innerHTML = "دخل كل البيانات لو سمحت";
+        document.getElementById("tip").innerHTML = "";
+        return;
+    }
+
+    var wattHour = power * hours;
+    var kwh = wattHour / 1000;
+    var cost = kwh * price;
+
+    document.getElementById("result").innerHTML =
+        "الاستهلاك: " + kwh.toFixed(2) + " كيلو واط/ساعة<br>" +
+        "التكلفة التقريبية: " + cost.toFixed(2);
+
+    if(kwh > 2){
+        document.getElementById("tip").innerHTML =
+            "نصيحة 💡: حاول تقلل ساعات الاستخدام أو تستخدم جهاز موفّر للطاقة.";
+    } else {
+        document.getElementById("tip").innerHTML =
+            "ممتاز 🌱 استهلاكك قليل وتساهم في ترشيد الكهرباء.";
+    }
+}
+</script>
+
+</body>
+</html>
